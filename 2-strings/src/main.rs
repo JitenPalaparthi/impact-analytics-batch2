@@ -10,6 +10,12 @@ fn main() {
     let char1:char='你';
     company_name4.insert(0,char1);
     company_name4.insert_str(0,"hey how are you doing. ");
+
+    println!("{:p}",company_name1.as_ptr());
+    println!("{:p}",company_name4.as_ptr());
+    let num1 = 100;
+    println!("{:p}",&num1);
+
 }
 
 // &str vs String

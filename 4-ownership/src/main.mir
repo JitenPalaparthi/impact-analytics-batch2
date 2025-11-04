@@ -1,0 +1,135 @@
+// WARNING: This output format is intended for human consumers only
+// and is subject to change without notice. Knock yourself out.
+// HINT: See also -Z dump-mir for MIR at specific points during compilation.
+fn main() -> () {
+    let mut _0: ();
+    let _1: i32;
+    let _2: ();
+    let mut _3: std::fmt::Arguments<'_>;
+    let mut _5: core::fmt::rt::Argument<'_>;
+    let _6: &i32;
+    let _7: &[&str; 2];
+    let _8: &[core::fmt::rt::Argument<'_>; 1];
+    let mut _10: &str;
+    let _12: ();
+    let mut _13: std::fmt::Arguments<'_>;
+    let mut _15: core::fmt::rt::Argument<'_>;
+    let _16: &std::string::String;
+    let _17: &[&str; 2];
+    let _18: &[core::fmt::rt::Argument<'_>; 1];
+    scope 1 {
+        debug i => _1;
+        scope 2 {
+            debug j => _1;
+            let _4: [core::fmt::rt::Argument<'_>; 1];
+            let _9: std::string::String;
+            scope 3 {
+                debug args => _4;
+            }
+            scope 4 {
+                debug str1 => _9;
+                let _11: std::string::String;
+                scope 5 {
+                    debug str2 => _11;
+                    let _14: [core::fmt::rt::Argument<'_>; 1];
+                    scope 6 {
+                        debug args => _14;
+                    }
+                }
+            }
+        }
+    }
+
+    bb0: {
+        _1 = const 100_i32;
+        _6 = &_1;
+        _5 = core::fmt::rt::Argument::<'_>::new_display::<i32>(copy _6) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        _4 = [move _5];
+        _7 = const main::promoted[1];
+        _8 = &_4;
+        _3 = core::fmt::rt::<impl Arguments<'_>>::new_v1::<2, 1>(copy _7, copy _8) -> [return: bb2, unwind continue];
+    }
+
+    bb2: {
+        _2 = _print(move _3) -> [return: bb3, unwind continue];
+    }
+
+    bb3: {
+        _10 = const "Hello";
+        _9 = <str as ToString>::to_string(move _10) -> [return: bb4, unwind continue];
+    }
+
+    bb4: {
+        _11 = move _9;
+        _16 = &_11;
+        _15 = core::fmt::rt::Argument::<'_>::new_display::<String>(copy _16) -> [return: bb5, unwind: bb9];
+    }
+
+    bb5: {
+        _14 = [move _15];
+        _17 = const main::promoted[0];
+        _18 = &_14;
+        _13 = core::fmt::rt::<impl Arguments<'_>>::new_v1::<2, 1>(copy _17, copy _18) -> [return: bb6, unwind: bb9];
+    }
+
+    bb6: {
+        _12 = _print(move _13) -> [return: bb7, unwind: bb9];
+    }
+
+    bb7: {
+        drop(_11) -> [return: bb8, unwind continue];
+    }
+
+    bb8: {
+        return;
+    }
+
+    bb9 (cleanup): {
+        drop(_11) -> [return: bb10, unwind terminate(cleanup)];
+    }
+
+    bb10 (cleanup): {
+        resume;
+    }
+}
+
+alloc3 (size: 5, align: 1) {
+    48 65 6c 6c 6f                                  │ Hello
+}
+
+const main::promoted[0]: &[&str; 2] = {
+    let mut _0: &[&str; 2];
+    let mut _1: [&str; 2];
+
+    bb0: {
+        _1 = [const "", const "\n"];
+        _0 = &_1;
+        return;
+    }
+}
+
+alloc2 (size: 1, align: 1) {
+    0a                                              │ .
+}
+
+alloc1 (size: 0, align: 1) {}
+
+const main::promoted[1]: &[&str; 2] = {
+    let mut _0: &[&str; 2];
+    let mut _1: [&str; 2];
+
+    bb0: {
+        _1 = [const "", const "\n"];
+        _0 = &_1;
+        return;
+    }
+}
+
+alloc2 (size: 1, align: 1) {
+    0a                                              │ .
+}
+
+alloc1 (size: 0, align: 1) {}
