@@ -23,7 +23,6 @@ fn main() {
      let j = i;
 
      let str3 = str2.clone();
-
      
 }
 
