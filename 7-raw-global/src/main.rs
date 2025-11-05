@@ -17,4 +17,20 @@ fn main() {
 
         let tuple_vals = ("Impact Analytics",12312312.123,true);
         println!("{:#?}",tuple_vals);// you can print it as a debug print
+    
+    let mut s1:String  = "Hello World".to_string(); 
+
+    let l= add_str(&mut s1, "! How are you doing?");
+
+    // let mut s1:&mut str = "Hello World";
+    // let l= add_str(s1, "! How are you doing?");
+
+    let mut s1:&str="hello World";
+    s1 = "Hello Impact Analytics";
+    
+    }
+
+    fn add_str(s :&mut str,st:&str)->i32{
+        s.to_string().push_str(st);
+        return s.len() as i32;
     }
