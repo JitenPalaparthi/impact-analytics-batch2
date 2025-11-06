@@ -28,6 +28,9 @@ fn main() {
         println!("What has return here --> {}",*ret)
     }
 
+    get_sq3(14);
+    println!("{}",unsafe{GLOBAL});
+
 }
  fn get_sq1(n:i32)-> *const i32{
         let ret = n *n; // what is the lifetime of ret ?
@@ -42,14 +45,14 @@ fn main() {
     */
 
     // 'static
-      fn get_sq3(n:i32)->&'static i32{ // am I using any raw pointer here?
+      fn get_sq3(n:i32)->*const i32{ // am I using any raw pointer here?
             unsafe{
                 GLOBAL = n *n ;
-                return &GLOBAL; // This is a dangling reference
             }
-            // let ret = n *n;
-            // return &ret;
+          return &raw const GLOBAL; // This is a dangling reference
+          //  return  &mut GLOBAL as *const i32; 
     }
+
 
 // raw pointers
 // a pointer that cannot be dropped by itself 
