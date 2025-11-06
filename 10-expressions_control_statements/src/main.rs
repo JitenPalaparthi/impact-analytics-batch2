@@ -120,6 +120,15 @@ fn main() {
      // 
 
      // normal loop
+
+     let mut num = 1;
+     let result = loop{
+      num *=2;
+      if num >50{
+         break num;
+      }
+     };
+
 }
 
 fn get_nothing(){
