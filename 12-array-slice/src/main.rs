@@ -55,7 +55,6 @@ fn main() {
     }
   }
 
-
   let arr3d: [[[i32; 2]; 2]; 2] = [
     [[1,2],[3,4],],[[5,6],[7,8]],
   ];
@@ -72,7 +71,6 @@ fn main() {
 // Zig --> Not based on the type but majorly based on allocator
 
 // glic/musl --> System allocator --> Malloc 
-
 
 fn sum_array(arr:[i32;5])->i64{
     let mut sum = 0;
