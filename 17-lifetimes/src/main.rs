@@ -15,7 +15,6 @@ fn main() {
    println!("address of strs.0:{:p} strs.1:{:p}",(strs.0).as_ptr(),(strs.1).as_ptr());
    println!("address of ret s:{:p} ",s.as_ptr());
 
-
    let l=max_len(&strs.0,&strs.1);
 }
 
@@ -25,6 +24,11 @@ fn main() {
 
 fn get_length<'a>(s:&'a str)->i32{
     return s.len() as i32
+}
+
+fn get_str(s:&mut String)->&str{
+    s.push_str("Done");
+    return s
 }
 
 fn max_str<'a>(s1:&'a str ,s2:&'a str)->&'a str{
@@ -41,3 +45,6 @@ fn max_len(s1:&str ,s2:&str)->usize{ // not going to return any reference
     }
     s2.len()
 }
+
+// Create s1 and s2 in different scopes.. 
+// Call the function and check what would happen
