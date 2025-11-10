@@ -1,0 +1,655 @@
+// WARNING: This output format is intended for human consumers only
+// and is subject to change without notice. Knock yourself out.
+// HINT: See also -Z dump-mir for MIR at specific points during compilation.
+fn main() -> () {
+    let mut _0: ();
+    let _1: (i32, bool, &str);
+    let mut _4: (i32, bool, &str);
+    let _7: ();
+    let mut _8: std::fmt::Arguments<'_>;
+    let mut _10: core::fmt::rt::Argument<'_>;
+    let _11: &i32;
+    let mut _12: (i32, bool);
+    let _13: &[&str; 2];
+    let _14: &[core::fmt::rt::Argument<'_>; 1];
+    let _16: ();
+    let mut _17: std::fmt::Arguments<'_>;
+    let mut _19: core::fmt::rt::Argument<'_>;
+    let _20: &i32;
+    let mut _21: (i32, bool);
+    let _22: &[&str; 2];
+    let _23: &[core::fmt::rt::Argument<'_>; 1];
+    let _24: ();
+    let mut _25: std::fmt::Arguments<'_>;
+    let mut _27: core::fmt::rt::Argument<'_>;
+    let _28: &i32;
+    let mut _29: (i32, bool);
+    let _30: &[&str; 2];
+    let _31: &[core::fmt::rt::Argument<'_>; 1];
+    let _32: ();
+    let mut _33: std::fmt::Arguments<'_>;
+    let mut _35: &&();
+    let _36: &();
+    let mut _37: &&();
+    let _38: &();
+    let mut _40: core::fmt::rt::Argument<'_>;
+    let mut _41: core::fmt::rt::Argument<'_>;
+    let _42: &[&str; 3];
+    let _43: &[core::fmt::rt::Argument<'_>; 2];
+    let _44: ();
+    let mut _45: std::fmt::Arguments<'_>;
+    let mut _47: core::fmt::rt::Argument<'_>;
+    let _48: &usize;
+    let _49: usize;
+    let _50: &i32;
+    let _51: &[&str; 2];
+    let _52: &[core::fmt::rt::Argument<'_>; 1];
+    let mut _55: std::string::String;
+    let mut _56: &str;
+    let _57: ();
+    let mut _58: std::fmt::Arguments<'_>;
+    let mut _60: core::fmt::rt::Argument<'_>;
+    let _61: &usize;
+    let _62: usize;
+    let _63: &std::boxed::Box<i32>;
+    let _64: &[&str; 2];
+    let _65: &[core::fmt::rt::Argument<'_>; 1];
+    let _66: ();
+    let mut _67: std::fmt::Arguments<'_>;
+    let mut _69: core::fmt::rt::Argument<'_>;
+    let _70: &usize;
+    let _71: usize;
+    let _72: &std::boxed::Box<std::string::String>;
+    let _73: &[&str; 2];
+    let _74: &[core::fmt::rt::Argument<'_>; 1];
+    let _75: ();
+    let _76: &std::boxed::Box<i32>;
+    let _77: ();
+    let _78: &std::boxed::Box<std::string::String>;
+    let _79: ();
+    let _80: &();
+    let _81: i8;
+    let _82: f64;
+    let _83: f32;
+    let _84: i64;
+    let mut _85: &&();
+    let mut _86: &&();
+    scope 1 {
+        debug _vals => _1;
+        let _2: i32;
+        let _3: &str;
+        scope 2 {
+            debug _a => _2;
+            debug _b => _3;
+            let _5: i32;
+            scope 3 {
+            }
+            scope 4 {
+                debug _x => _5;
+                let _6: ();
+                let _9: [core::fmt::rt::Argument<'_>; 1];
+                scope 5 {
+                    debug r1 => const ();
+                    let _15: ();
+                    let _18: [core::fmt::rt::Argument<'_>; 1];
+                    scope 7 {
+                        debug r2 => const ();
+                        let _26: [core::fmt::rt::Argument<'_>; 1];
+                        scope 9 {
+                        }
+                        scope 10 {
+                            debug args => _26;
+                        }
+                        scope 11 {
+                            debug t => const ();
+                            let _34: (&&(), &&());
+                            let _46: [core::fmt::rt::Argument<'_>; 1];
+                            let _53: std::boxed::Box<i32>;
+                            scope 12 {
+                                debug args => _34;
+                                let _39: [core::fmt::rt::Argument<'_>; 2];
+                                scope 13 {
+                                    debug args => _39;
+                                }
+                            }
+                            scope 14 {
+                                debug args => _46;
+                            }
+                            scope 15 {
+                                debug b1 => _53;
+                                let _54: std::boxed::Box<std::string::String>;
+                                scope 16 {
+                                    debug b2 => _54;
+                                    let _59: [core::fmt::rt::Argument<'_>; 1];
+                                    let _68: [core::fmt::rt::Argument<'_>; 1];
+                                    scope 17 {
+                                        debug args => _59;
+                                    }
+                                    scope 18 {
+                                        debug args => _68;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    scope 8 {
+                        debug args => _18;
+                    }
+                }
+                scope 6 {
+                    debug args => _9;
+                }
+            }
+        }
+    }
+
+    bb0: {
+        _1 = (const 100_i32, const true, const "hello World");
+        _4 = (const 100_i32, const true, const "hello World");
+        _2 = copy (_4.0: i32);
+        _3 = copy (_4.2: &str);
+        _5 = const 100_i32;
+        _12 = MulWithOverflow(const 100_i32, const 100_i32);
+        assert(!move (_12.1: bool), "attempt to compute `{} * {}`, which would overflow", const 100_i32, const 100_i32) -> [success: bb1, unwind continue];
+    }
+
+    bb1: {
+        _11 = const main::promoted[9];
+        _10 = core::fmt::rt::Argument::<'_>::new_display::<i32>(copy _11) -> [return: bb2, unwind continue];
+    }
+
+    bb2: {
+        _9 = [move _10];
+        _13 = const main::promoted[8];
+        _14 = &_9;
+        _8 = core::fmt::rt::<impl Arguments<'_>>::new_v1::<2, 1>(copy _13, copy _14) -> [return: bb3, unwind continue];
+    }
+
+    bb3: {
+        _7 = _print(move _8) -> [return: bb4, unwind continue];
+    }
+
+    bb4: {
+        _21 = MulWithOverflow(const 100_i32, const 100_i32);
+        assert(!move (_21.1: bool), "attempt to compute `{} * {}`, which would overflow", const 100_i32, const 100_i32) -> [success: bb5, unwind continue];
+    }
+
+    bb5: {
+        _20 = const main::promoted[7];
+        _19 = core::fmt::rt::Argument::<'_>::new_display::<i32>(copy _20) -> [return: bb6, unwind continue];
+    }
+
+    bb6: {
+        _18 = [move _19];
+        _22 = const main::promoted[6];
+        _23 = &_18;
+        _17 = core::fmt::rt::<impl Arguments<'_>>::new_v1::<2, 1>(copy _22, copy _23) -> [return: bb7, unwind continue];
+    }
+
+    bb7: {
+        _16 = _print(move _17) -> [return: bb8, unwind continue];
+    }
+
+    bb8: {
+        _29 = MulWithOverflow(const 100_i32, const 100_i32);
+        assert(!move (_29.1: bool), "attempt to compute `{} * {}`, which would overflow", const 100_i32, const 100_i32) -> [success: bb9, unwind continue];
+    }
+
+    bb9: {
+        _28 = const main::promoted[5];
+        _27 = core::fmt::rt::Argument::<'_>::new_display::<i32>(copy _28) -> [return: bb10, unwind continue];
+    }
+
+    bb10: {
+        _26 = [move _27];
+        _30 = const main::promoted[4];
+        _31 = &_26;
+        _25 = core::fmt::rt::<impl Arguments<'_>>::new_v1::<2, 1>(copy _30, copy _31) -> [return: bb11, unwind continue];
+    }
+
+    bb11: {
+        _24 = _print(move _25) -> [return: bb12, unwind continue];
+    }
+
+    bb12: {
+        _36 = &_6;
+        _35 = &_36;
+        _38 = &_15;
+        _37 = &_38;
+        _34 = (move _35, move _37);
+        _85 = deref_copy (_34.0: &&());
+        _40 = core::fmt::rt::Argument::<'_>::new_pointer::<&()>(copy _85) -> [return: bb13, unwind continue];
+    }
+
+    bb13: {
+        _86 = deref_copy (_34.1: &&());
+        _41 = core::fmt::rt::Argument::<'_>::new_pointer::<&()>(copy _86) -> [return: bb14, unwind continue];
+    }
+
+    bb14: {
+        _39 = [move _40, move _41];
+        _42 = const main::promoted[3];
+        _43 = &_39;
+        _33 = core::fmt::rt::<impl Arguments<'_>>::new_v1::<3, 2>(copy _42, copy _43) -> [return: bb15, unwind continue];
+    }
+
+    bb15: {
+        _32 = _print(move _33) -> [return: bb16, unwind continue];
+    }
+
+    bb16: {
+        _50 = &_5;
+        _49 = std::mem::size_of_val::<i32>(copy _50) -> [return: bb17, unwind continue];
+    }
+
+    bb17: {
+        _48 = &_49;
+        _47 = core::fmt::rt::Argument::<'_>::new_display::<usize>(copy _48) -> [return: bb18, unwind continue];
+    }
+
+    bb18: {
+        _46 = [move _47];
+        _51 = const main::promoted[2];
+        _52 = &_46;
+        _45 = core::fmt::rt::<impl Arguments<'_>>::new_v1::<2, 1>(copy _51, copy _52) -> [return: bb19, unwind continue];
+    }
+
+    bb19: {
+        _44 = _print(move _45) -> [return: bb20, unwind continue];
+    }
+
+    bb20: {
+        _53 = Box::<i32>::new(const 100_i32) -> [return: bb21, unwind continue];
+    }
+
+    bb21: {
+        _56 = const "Hello World";
+        _55 = <str as ToString>::to_string(move _56) -> [return: bb22, unwind: bb42];
+    }
+
+    bb22: {
+        _54 = Box::<String>::new(move _55) -> [return: bb23, unwind: bb42];
+    }
+
+    bb23: {
+        _63 = &_53;
+        _62 = std::mem::size_of_val::<Box<i32>>(copy _63) -> [return: bb24, unwind: bb41];
+    }
+
+    bb24: {
+        _61 = &_62;
+        _60 = core::fmt::rt::Argument::<'_>::new_display::<usize>(copy _61) -> [return: bb25, unwind: bb41];
+    }
+
+    bb25: {
+        _59 = [move _60];
+        _64 = const main::promoted[1];
+        _65 = &_59;
+        _58 = core::fmt::rt::<impl Arguments<'_>>::new_v1::<2, 1>(copy _64, copy _65) -> [return: bb26, unwind: bb41];
+    }
+
+    bb26: {
+        _57 = _print(move _58) -> [return: bb27, unwind: bb41];
+    }
+
+    bb27: {
+        _72 = &_54;
+        _71 = std::mem::size_of_val::<Box<String>>(copy _72) -> [return: bb28, unwind: bb41];
+    }
+
+    bb28: {
+        _70 = &_71;
+        _69 = core::fmt::rt::Argument::<'_>::new_display::<usize>(copy _70) -> [return: bb29, unwind: bb41];
+    }
+
+    bb29: {
+        _68 = [move _69];
+        _73 = const main::promoted[0];
+        _74 = &_68;
+        _67 = core::fmt::rt::<impl Arguments<'_>>::new_v1::<2, 1>(copy _73, copy _74) -> [return: bb30, unwind: bb41];
+    }
+
+    bb30: {
+        _66 = _print(move _67) -> [return: bb31, unwind: bb41];
+    }
+
+    bb31: {
+        _76 = &_53;
+        _75 = get_type_of::<Box<i32>>(copy _76) -> [return: bb32, unwind: bb41];
+    }
+
+    bb32: {
+        _78 = &_54;
+        _77 = get_type_of::<Box<String>>(copy _78) -> [return: bb33, unwind: bb41];
+    }
+
+    bb33: {
+        _80 = &_6;
+        _79 = get_type_of::<()>(copy _80) -> [return: bb34, unwind: bb41];
+    }
+
+    bb34: {
+        _81 = add::<i8>(const 10_i8, const 20_i8) -> [return: bb35, unwind: bb41];
+    }
+
+    bb35: {
+        _82 = add::<f64>(const 1212312.12123123f64, const 1012312.2312312312f64) -> [return: bb36, unwind: bb41];
+    }
+
+    bb36: {
+        _83 = add::<f32>(const 12f32, const 12.5f32) -> [return: bb37, unwind: bb41];
+    }
+
+    bb37: {
+        _84 = add::<i64>(const 112312321_i64, const 12312331_i64) -> [return: bb38, unwind: bb41];
+    }
+
+    bb38: {
+        drop(_54) -> [return: bb39, unwind: bb42];
+    }
+
+    bb39: {
+        drop(_53) -> [return: bb40, unwind continue];
+    }
+
+    bb40: {
+        return;
+    }
+
+    bb41 (cleanup): {
+        drop(_54) -> [return: bb42, unwind terminate(cleanup)];
+    }
+
+    bb42 (cleanup): {
+        drop(_53) -> [return: bb43, unwind terminate(cleanup)];
+    }
+
+    bb43 (cleanup): {
+        resume;
+    }
+}
+
+alloc6 (size: 11, align: 1) {
+    48 65 6c 6c 6f 20 57 6f 72 6c 64                │ Hello World
+}
+
+alloc1 (size: 11, align: 1) {
+    68 65 6c 6c 6f 20 57 6f 72 6c 64                │ hello World
+}
+
+const main::promoted[0]: &[&str; 2] = {
+    let mut _0: &[&str; 2];
+    let mut _1: [&str; 2];
+
+    bb0: {
+        _1 = [const "", const "\n"];
+        _0 = &_1;
+        return;
+    }
+}
+
+alloc3 (size: 1, align: 1) {
+    0a                                              │ .
+}
+
+alloc2 (size: 0, align: 1) {}
+
+const main::promoted[1]: &[&str; 2] = {
+    let mut _0: &[&str; 2];
+    let mut _1: [&str; 2];
+
+    bb0: {
+        _1 = [const "", const "\n"];
+        _0 = &_1;
+        return;
+    }
+}
+
+alloc3 (size: 1, align: 1) {
+    0a                                              │ .
+}
+
+alloc2 (size: 0, align: 1) {}
+
+const main::promoted[2]: &[&str; 2] = {
+    let mut _0: &[&str; 2];
+    let mut _1: [&str; 2];
+
+    bb0: {
+        _1 = [const "", const "\n"];
+        _0 = &_1;
+        return;
+    }
+}
+
+alloc3 (size: 1, align: 1) {
+    0a                                              │ .
+}
+
+alloc2 (size: 0, align: 1) {}
+
+const main::promoted[3]: &[&str; 3] = {
+    let mut _0: &[&str; 3];
+    let mut _1: [&str; 3];
+
+    bb0: {
+        _1 = [const "r1:", const " r2:", const "\n"];
+        _0 = &_1;
+        return;
+    }
+}
+
+alloc5 (size: 4, align: 1) {
+    20 72 32 3a                                     │  r2:
+}
+
+alloc4 (size: 3, align: 1) {
+    72 31 3a                                        │ r1:
+}
+
+alloc3 (size: 1, align: 1) {
+    0a                                              │ .
+}
+
+const main::promoted[4]: &[&str; 2] = {
+    let mut _0: &[&str; 2];
+    let mut _1: [&str; 2];
+
+    bb0: {
+        _1 = [const "", const "\n"];
+        _0 = &_1;
+        return;
+    }
+}
+
+alloc3 (size: 1, align: 1) {
+    0a                                              │ .
+}
+
+alloc2 (size: 0, align: 1) {}
+
+const main::promoted[5]: &i32 = {
+    let mut _0: &i32;
+    let mut _1: i32;
+    let mut _2: (i32, bool);
+
+    bb0: {
+        _2 = MulWithOverflow(const 100_i32, const 100_i32);
+        _1 = move (_2.0: i32);
+        _0 = &_1;
+        return;
+    }
+}
+
+const main::promoted[6]: &[&str; 2] = {
+    let mut _0: &[&str; 2];
+    let mut _1: [&str; 2];
+
+    bb0: {
+        _1 = [const "", const "\n"];
+        _0 = &_1;
+        return;
+    }
+}
+
+alloc3 (size: 1, align: 1) {
+    0a                                              │ .
+}
+
+alloc2 (size: 0, align: 1) {}
+
+const main::promoted[7]: &i32 = {
+    let mut _0: &i32;
+    let mut _1: i32;
+    let mut _2: (i32, bool);
+
+    bb0: {
+        _2 = MulWithOverflow(const 100_i32, const 100_i32);
+        _1 = move (_2.0: i32);
+        _0 = &_1;
+        return;
+    }
+}
+
+const main::promoted[8]: &[&str; 2] = {
+    let mut _0: &[&str; 2];
+    let mut _1: [&str; 2];
+
+    bb0: {
+        _1 = [const "", const "\n"];
+        _0 = &_1;
+        return;
+    }
+}
+
+alloc3 (size: 1, align: 1) {
+    0a                                              │ .
+}
+
+alloc2 (size: 0, align: 1) {}
+
+const main::promoted[9]: &i32 = {
+    let mut _0: &i32;
+    let mut _1: i32;
+    let mut _2: (i32, bool);
+
+    bb0: {
+        _2 = MulWithOverflow(const 100_i32, const 100_i32);
+        _1 = move (_2.0: i32);
+        _0 = &_1;
+        return;
+    }
+}
+
+fn get_type_of(_1: &T) -> () {
+    let mut _0: ();
+    let _2: ();
+    let mut _3: std::fmt::Arguments<'_>;
+    let _4: [core::fmt::rt::Argument<'_>; 1];
+    let mut _5: core::fmt::rt::Argument<'_>;
+    let _6: &&str;
+    let _7: &str;
+    let _8: &[&str; 2];
+    let _9: &[core::fmt::rt::Argument<'_>; 1];
+    scope 1 {
+        debug args => _4;
+    }
+
+    bb0: {
+        _7 = std::any::type_name::<T>() -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        _6 = &_7;
+        _5 = core::fmt::rt::Argument::<'_>::new_display::<&str>(copy _6) -> [return: bb2, unwind continue];
+    }
+
+    bb2: {
+        _4 = [move _5];
+        _8 = const get_type_of::<T>::promoted[0];
+        _9 = &_4;
+        _3 = core::fmt::rt::<impl Arguments<'_>>::new_v1::<2, 1>(copy _8, copy _9) -> [return: bb3, unwind continue];
+    }
+
+    bb3: {
+        _2 = _print(move _3) -> [return: bb4, unwind continue];
+    }
+
+    bb4: {
+        return;
+    }
+}
+
+const get_type_of::promoted[0]: &[&str; 2] = {
+    let mut _0: &[&str; 2];
+    let mut _1: [&str; 2];
+
+    bb0: {
+        _1 = [const "Type:", const "\n"];
+        _0 = &_1;
+        return;
+    }
+}
+
+alloc27 (size: 5, align: 1) {
+    54 79 70 65 3a                                  │ Type:
+}
+
+alloc3 (size: 1, align: 1) {
+    0a                                              │ .
+}
+
+fn add(_1: T, _2: T) -> T {
+    debug a => _1;
+    debug b => _2;
+    let mut _0: T;
+
+    bb0: {
+        _0 = <T as Add>::add(move _1, move _2) -> [return: bb1, unwind continue];
+    }
+
+    bb1: {
+        return;
+    }
+}
+
+fn calc(_1: i32, _2: i32) -> (i64, i64, i64) {
+    debug a => _1;
+    debug b => _2;
+    let mut _0: (i64, i64, i64);
+    let mut _3: i64;
+    let mut _4: i32;
+    let mut _5: (i32, bool);
+    let mut _6: i64;
+    let mut _7: i32;
+    let mut _8: (i32, bool);
+    let mut _9: i64;
+    let mut _10: i32;
+    let mut _11: (i32, bool);
+
+    bb0: {
+        _5 = AddWithOverflow(copy _1, copy _2);
+        assert(!move (_5.1: bool), "attempt to compute `{} + {}`, which would overflow", copy _1, copy _2) -> [success: bb1, unwind continue];
+    }
+
+    bb1: {
+        _4 = move (_5.0: i32);
+        _3 = move _4 as i64 (IntToInt);
+        _8 = SubWithOverflow(copy _1, copy _2);
+        assert(!move (_8.1: bool), "attempt to compute `{} - {}`, which would overflow", copy _1, copy _2) -> [success: bb2, unwind continue];
+    }
+
+    bb2: {
+        _7 = move (_8.0: i32);
+        _6 = move _7 as i64 (IntToInt);
+        _11 = MulWithOverflow(copy _1, copy _2);
+        assert(!move (_11.1: bool), "attempt to compute `{} * {}`, which would overflow", copy _1, copy _2) -> [success: bb3, unwind continue];
+    }
+
+    bb3: {
+        _10 = move (_11.0: i32);
+        _9 = move _10 as i64 (IntToInt);
+        _0 = (move _3, move _6, move _9);
+        return;
+    }
+}
