@@ -10,7 +10,7 @@ fn main() {
    let e1:Empty=Empty{};
    let e2:Empty=Empty{};
 
-   let e3 = e1; // 
+   let e3: Empty = e1; // 
 
 
    println!("Empty:{} Address;{:p}",e1,&e1);
