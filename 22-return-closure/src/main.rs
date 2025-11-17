@@ -82,3 +82,11 @@ fn make_counter()->impl FnMut()->i32{
 }
 
 // Fn , FnMut, FnOnce --> traits --> For trait bounds
+
+
+fn fnonce_string()-> impl FnOnce(&str){
+    let mut s1 = "".to_string();
+    move|s|{
+        s1.push_str(s);
+    }
+}
