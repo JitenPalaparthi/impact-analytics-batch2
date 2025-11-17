@@ -63,3 +63,10 @@ println!("{}",a);
 // Fn
 // FnMut
 // FnOnce
+
+
+// Take a vector give the sum of elements in the vector..
+
+// Fn give sum
+// FnMut // add a number to the vector  and five sum
+// FnOnce // add a number to the vector and give sum
