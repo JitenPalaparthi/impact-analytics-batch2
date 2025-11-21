@@ -36,3 +36,27 @@ impl<'a> Address<'a> {
 //    pub Street: String,
 //    pub PinCide: String,
 // }
+
+
+pub fn split_addr(addr:&str)->Address{
+     let mut city = "";
+        let mut street = "";
+        let mut pincode = "";
+        for s in addr.split(';') {
+            if let Some(c) = s.strip_prefix("City:") {
+                city = c;
+            }
+            if let Some(c) = s.strip_prefix("Street:") {
+                street = c;
+            }
+
+            if let Some(c) = s.strip_prefix("Pincode:") {
+                pincode = c;
+            }
+        }
+        Address {
+            City: city,
+            Street: street,
+            PinCode: pincode,
+        }
+}
