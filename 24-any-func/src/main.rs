@@ -33,6 +33,7 @@ fn main() {
     
 
     if let Some(any_fn)=func_map.get("greet"){
+    
        if let Some(fn1)= any_fn.downcast_ref::<fn()>(){
         fn1();
        }
@@ -69,4 +70,15 @@ fn sq(i: i32) -> i64 {
 }
 fn add(a: i32, b: i32) -> i64 {
     return (a + b) as i64;
+}
+
+fn add1<T: std::ops::Add<Output = U> + Copy, U>(a: T, b: T) -> U {
+    a + b
+}   
+
+fn add2<T,U>(a: T, b: T) -> U
+where
+    T: std::ops::Add<Output = U> + Copy,
+{
+    a + b
 }
