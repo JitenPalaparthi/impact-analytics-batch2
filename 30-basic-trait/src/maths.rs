@@ -21,3 +21,5 @@ impl Math for Integer{
         (self.0 * self.0) as i64
     }
 }
+
+// Create a trait to give isPrime()
