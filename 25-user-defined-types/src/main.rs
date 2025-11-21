@@ -1,16 +1,20 @@
-pub mod rect;
+pub mod shapes_rect;
 
 pub mod greet;
 
-use rect::Rect;
+mod shapes_square;
+
+use shapes_rect::rect::Rect;
+use shapes_square::square::Square;
 
 use crate::greet::Greet;
 
 
-fn main() {
-    let r1 = Rect{L:12.23,B:34.34};
 
-    let r2 = Rect::new(123.34, 456.34);
+fn main() {
+   //let r1 = Rect{L:12.23,B:34.34};
+
+    let mut r1 = Rect::new(123.34, 456.34);
 
     let r3 = Rect::defaults();
     Greet();
@@ -21,6 +25,15 @@ fn main() {
     let p1 = r1.perimeter();
 
     println!("Area:{:.2} Perimeter:{:.3}",a1,p1);
+
+    let s1 = Square::new(23.54);
+
+    let a1 = s1.area();
+
+    let p1 = s1.perimeter();
+    
+    println!("Area:{:.2} Perimeter:{:.3}",a1,p1);
+
     
 }
 
