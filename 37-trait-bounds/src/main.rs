@@ -15,8 +15,13 @@ fn main() {
     };
     animal.name.speak();
 
-    let sound = "Silent";
+    let sound: &'static str = "Silent"; // 'static lifetime
     let pg = PugDog { sound: &sound };
+    let animal = Animal { name: Box::new(pg) };
+    animal.name.speak();
+
+    let sound: String = "Silent".to_string(); // &sound it is not a static reference
+    let pg = GoldenRetriverDog { sound: &sound };
     let animal = Animal { name: Box::new(pg) };
     animal.name.speak();
 }
@@ -26,10 +31,15 @@ trait Speak {
     fn speak(&self); // def called speak
 }
 
-struct Animal {
-    name: Box<dyn Speak + 'static>, // Composition, owned values .. not the borrowd values
+struct Animal<'a> {
+    name: Box<dyn Speak+ 'a >,           // Composition, owned values .. not the borrowd values
                                     // dog:Box<Dog>,
                                     // cat:Box<Cat>,
+
+
+
+
+  // name1: Box<dyn Speak>, // static lifetime
 }
 
 #[derive(Copy, Clone)]
@@ -55,5 +65,18 @@ struct PugDog<'a> {
 impl<'a> Speak for PugDog<'a> {
     fn speak(&self) {
         println!("Pug dog is making some sound {}!", self.sound);
+    }
+}
+
+struct GoldenRetriverDog<'a> {
+    sound: &'a str, //reference
+}
+
+impl<'a> Speak for GoldenRetriverDog<'a> {
+    fn speak(&self) {
+        println!(
+            "Pug dog is making Log of  sound but now it is {}!",
+            self.sound
+        );
     }
 }

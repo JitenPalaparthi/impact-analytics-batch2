@@ -50,3 +50,17 @@ impl Calc for Data {
         return self.d;
     }
 }
+
+
+// Try to create a builder pattern 
+
+// Build an obkect, Rect 
+// L,B, BGColour, Border, BorderColour
+// First create a rect object with l,b 
+// add BGClour to the same object 
+// add border to the same object 
+
+// The obejct that gets returns must be &mut rect 
+
+// let r = Rect::new(10.5,24)
+// r = r.SetBGColour("Red").SetBorder(1).SetBorderColour("blue")
