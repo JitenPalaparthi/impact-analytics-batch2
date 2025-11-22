@@ -1,5 +1,7 @@
 use crate::shapes::Shapes;
 use crate::shapes::What;
+use crate::shapes::WShape;
+#[derive(Copy,Clone,Debug)]
 pub struct Rect {
     L: f32,
     B: f32,
@@ -25,3 +27,5 @@ impl What for Rect{
           "Rect".to_string()
      }
 }
+
+impl WShape for Rect{}

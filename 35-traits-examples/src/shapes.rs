@@ -4,8 +4,13 @@ pub trait Shapes {
 }
 // Can do the default implementation
 
+
 pub trait What { // default implementaion
      fn what(&self) -> String{
           "Shape".to_string()
      }
+}
+
+pub trait WShape:Shapes+What{
+
 }

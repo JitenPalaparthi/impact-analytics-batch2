@@ -1,6 +1,8 @@
 use crate::shapes::Shapes;
+use crate::shapes::WShape;
 use crate::shapes::What;
 
+#[derive(Copy,Clone,Debug)]
 pub struct Square(f32);
 
 impl Square {
@@ -17,4 +19,10 @@ impl Shapes for Square {
         (self.0 * 4.0) as f64
     }
 }
-impl What for Square{}
+impl What for Square{
+     fn what(&self) -> String{
+          "Square".to_string()
+     }
+}
+
+impl WShape for Square{}
