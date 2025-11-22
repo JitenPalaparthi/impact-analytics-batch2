@@ -1,4 +1,5 @@
 use crate::shapes::Shapes;
+use crate::shapes::What;
 
 pub struct Square(f32);
 
@@ -16,3 +17,4 @@ impl Shapes for Square {
         (self.0 * 4.0) as f64
     }
 }
+impl What for Square{}

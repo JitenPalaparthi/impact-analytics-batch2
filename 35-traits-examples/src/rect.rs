@@ -1,4 +1,5 @@
 use crate::shapes::Shapes;
+use crate::shapes::What;
 pub struct Rect {
     L: f32,
     B: f32,
@@ -17,4 +18,10 @@ impl Shapes for Rect {
      fn perimeter(&self) -> f64 {
         (2.0 * (self.L + self.B)) as f64
     }
+}
+
+impl What for Rect{
+     fn what(&self) -> String{
+          "Rect".to_string()
+     }
 }
