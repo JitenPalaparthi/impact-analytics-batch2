@@ -16,3 +16,12 @@ fn write_to_file(filename: &str, data: &str) -> Result<()> {
     file.write_all(data.as_bytes())?;
     Ok(())
 }
+
+fn write_to_file1(filename: &str, data: &str) -> Result<()> {
+    let mut file = File::create(filename).unwrap(); // there is no error
+    file.write_all(data.as_bytes()).unwrap();
+    Ok(())
+}
+
+// Dont propagate rather , create an error and return that .. 
+// use match , pattern
