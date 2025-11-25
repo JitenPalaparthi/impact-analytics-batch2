@@ -1,4 +1,4 @@
-use std::{thread,time::Duration};
+use std::{any::type_name, process::id, thread, time::Duration};
 use rand::prelude::*;
 fn main() {
     
@@ -6,6 +6,9 @@ fn main() {
     let  num = rng.random_range(1..=600);
 
     let p1 = Person{id:100,name:"Jiten".to_string()};
+
+    let mut id = 1001;
+    let r1 = Rawid{ptr:&mut id as *mut i32};
 
     let h1 = thread::spawn(move ||->Result<i32,String>{
         thread::sleep(Duration::from_millis(2000));
@@ -17,9 +20,16 @@ fn main() {
     });
 
     let h2 = thread::spawn(move ||{
-        thread::sleep(Duration::from_secs(5));
+        thread::sleep(Duration::from_secs(2));
         println!("{:?}",p1);
     });
+
+
+      let h3 = thread::spawn(move ||{
+        thread::sleep(Duration::from_secs(2));
+        println!("Rawid:{:?}",r1);
+    });
+
 
         match h1.join(){
             Ok(result)=>match result{
@@ -29,6 +39,8 @@ fn main() {
             Err(_)=>println!("some thing went wrong")
         }
         h2.join().unwrap();
+
+        h3.join().unwrap();
     
     println!("Thread has completed execution");
     
@@ -42,6 +54,11 @@ struct Person{
     name:String, // This also has implemented send
 }
 
+#[derive(Debug)]
+struct Rawid{
+    ptr: *mut i32, // unsafe pointer
+}
+unsafe impl Send for Rawid{}
 
 // How a hread can give an error 
 // Send and Sync
