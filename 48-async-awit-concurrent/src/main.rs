@@ -33,9 +33,9 @@ async fn main() {
      fn1("fib-1".to_string()).await;
      fib("fib-2".to_string()).await;
 
-    //let (r1, fn1r, fn2r) = tokio::join!(b1, fn1("fib-1".to_string()), fib("fib-2".to_string()));
+    // let (r1, fn1r, fn2r) = tokio::join!(b1, fn1("fib-1".to_string()), fib("fib-2".to_string()));
 
-    //println!("result:{}", r1);
+    // println!("result:{}", r1);
 }
 
 async fn fib(name: String) {

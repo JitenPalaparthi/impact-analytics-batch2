@@ -3,6 +3,10 @@ use tokio::task::spawn_blocking;
 #[tokio::main]
 
 async fn main() {
+    // fn 
+    // Fn, FnMut, FnOnce--> By the compiler impl 
+    // async 
+
     let b = async {
         for i in 1..=10 {
             tokio::time::sleep(Duration::from_millis(500)).await;
@@ -40,7 +44,7 @@ async fn main() {
       let fib_task_block = |mut a: i32, mut b: i32| {
         for _ in 0..10 {
             println!("fib spawn block-2 --> {}", a);
-            //tokio::time::sleep(Duration::from_millis(400)).await;
+            // tokio::time::sleep(Duration::from_millis(400)).await;
             let t = a;
             a = b;
             b = t + b;
@@ -67,4 +71,5 @@ async fn main() {
     let r3 = task3.await.unwrap();
     let r4 = task4.await.unwrap();
     let r5 = task5.await.unwrap();
+
 }
