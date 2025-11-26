@@ -1,1 +1,17 @@
 Hello World! 
+
+What is a Future 
+
+What is Poll
+    Poll Ready, Pending
+
+What is Executor
+
+What is Waker 
+
+
+What is a Context
+
+A Poll is a method that checks whether a future is ready or Pending
+
+
