@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package employee; // very imp to genearte a file
+
+// A simple Employee message
+message Employee {
+  uint32 id = 1;
+  string name = 2;
+  string address = 3;
+  repeated string social_media = 4; // array 
+  map<string, string> accounts = 5; // map 
+}
