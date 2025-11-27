@@ -1,0 +1,11 @@
+[package]
+name = "clang_rust"
+version = "0.1.0"
+edition = "2024"
+
+
+[build-dependencies]
+cc = "1.2.47"
+
+[dependencies]
+libc = "0.2.177"
