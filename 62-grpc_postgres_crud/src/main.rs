@@ -100,7 +100,7 @@ impl UserService for UserServiceImpl {
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    dotenvy::dotenv().ok();
+    dotenvy::dotenv().ok(); //.env
 
     tracing_subscriber::fmt()
         .with_env_filter(EnvFilter::from_default_env())
@@ -114,6 +114,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         .max_connections(5)
         .connect(&std::env::var("DATABASE_URL")?).await?;
 
+
     let addr: SocketAddr = "0.0.0.0:50055".parse()?;
     info!("🚀 gRPC server running on {}", addr);
 
@@ -122,6 +123,5 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     Server::builder()
         .add_service(UserServiceServer::new(svc))
         .serve(addr).await?;
-
     Ok(())
 }
