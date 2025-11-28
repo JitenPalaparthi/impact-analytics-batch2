@@ -1,0 +1,10 @@
+[package]
+name = "geometry_app"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+jp_shapes = { path = "../shapes" } #local path
+
+#[dependencies]
+#jp_shapes = { git = "https://github.com/your-user/jp_shapes.git" }

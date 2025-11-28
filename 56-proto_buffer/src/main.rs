@@ -2,6 +2,7 @@ use prost::Message;
 mod pb {
     include!(concat!(env!("CARGO_MANIFEST_DIR"), "/src/pb/employee.rs"));
 }
+
 use pb::Employee;
 use std::collections::HashMap;
 fn main() {

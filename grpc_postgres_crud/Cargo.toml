@@ -1,0 +1,25 @@
+[package]
+name = "grpc-postgres-crud"
+version = "0.1.0"
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+
+# gRPC
+tonic = "0.14.2"
+tonic-prost = "0.14.2"        # 👈 this fixes `tonic_prost::ProstCodec` error
+prost = "0.14"
+prost-types = "0.14"          # optional, handy for well-known types later
+
+# DB
+sqlx = { version = "0.8", features = ["runtime-tokio-rustls", "postgres", "macros"] }
+
+# Env + logging
+dotenvy = "0.15"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
+
+[build-dependencies]
+tonic-prost-build = "0.14.2"  # 👈 new-style codegen
